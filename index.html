@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Jorge Puszkar — Finance, Data Science & Aerial Photography. Explore my world through drone photography and professional milestones." />
+  <meta property="og:title" content="Jorge Puszkar · World Portfolio" />
+  <meta property="og:description" content="Explore my journey from Mexico City to Israel through drone photography and professional milestones." />
+  <title>Jorge Puszkar · World Portfolio</title>
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/map-mode.css" />
+  <link rel="stylesheet" href="styles/classic-mode.css" />
+  <link rel="stylesheet" href="styles/gallery.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════
+       SHARED HEADER
+  ══════════════════════════════════════════════ -->
+  <header class="site-header" id="site-header">
+    <div class="header-left">
+      <span class="header-name">Jorge Puszkar</span>
+      <span class="header-mode-badge" id="mode-badge">MAP MODE</span>
+    </div>
+    <nav class="header-nav" id="header-nav">
+      <a href="#" class="nav-link map-only" id="nav-gallery-btn">Gallery</a>
+      <a href="#classic-about" class="nav-link classic-only">About</a>
+      <a href="#classic-experience" class="nav-link classic-only">Experience</a>
+      <a href="#classic-education" class="nav-link classic-only">Education</a>
+      <a href="#classic-contact" class="nav-link classic-only">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ══════════════════════════════════════════════
+       MAP MODE
+  ══════════════════════════════════════════════ -->
+  <div id="map-view">
+    <!-- Leaflet map fills viewport below header -->
+    <div id="map"></div>
+
+    <!-- Map intro overlay (fades on first click) -->
+    <div class="map-intro" id="map-intro">
+      <div class="map-intro-inner">
+        <div class="map-intro-icon">🚁</div>
+        <h1>Jorge Puszkar</h1>
+        <p>Finance · Data Science · Aerial Photography</p>
+        <span class="map-intro-hint">Click any glowing marker on the map to explore my story</span>
+      </div>
+    </div>
+
+    <!-- Side Panel — slides in from right on marker click -->
+    <aside class="side-panel" id="side-panel" aria-hidden="true">
+      <button class="panel-close" id="panel-close" aria-label="Close panel">✕</button>
+      <div class="panel-photo-wrap">
+        <img class="panel-photo" id="panel-photo" src="" alt="" />
+      </div>
+      <div class="panel-body">
+        <div class="panel-meta">
+          <span class="panel-location" id="panel-location"></span>
+          <span class="panel-year" id="panel-year"></span>
+        </div>
+        <h2 class="panel-role" id="panel-role"></h2>
+        <p class="panel-org" id="panel-org"></p>
+        <p class="panel-desc" id="panel-desc"></p>
+        <div class="panel-details" id="panel-details"></div>
+        <div class="panel-skills" id="panel-skills"></div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CLASSIC MODE
+  ══════════════════════════════════════════════ -->
+  <div id="classic-view" aria-hidden="true">
+    <div class="cls-container">
+
+      <!-- Hero -->
+      <section class="cls-hero" id="classic-about">
+        <h1 class="cls-name">Jorge Puszkar Neumarkt</h1>
+        <p class="cls-title">Finance &amp; Data Science · Equity Research · Aerial Photography</p>
+        <div class="cls-contact-row">
+          <a href="mailto:jorgepuszkar@gmail.com">jorgepuszkar@gmail.com</a>
+          <span>·</span>
+          <span>·</span>
+          <a href="https://linkedin.com/in/jorge-puszkar-869b341ba/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section class="cls-section" id="classic-experience">
+        <h2 class="cls-section-title">Experience</h2>
+
+        <article class="cls-card cls-card--work">
+          <div class="cls-card-header">
+            <div>
+              <h3 class="cls-card-role">Equity Research Intern</h3>
+              <p class="cls-card-org">J.P. Morgan · Mexico City, Mexico</p>
+            </div>
+            <time class="cls-card-date">Mar 2026 – Present</time>
+          </div>
+          <ul class="cls-card-bullets">
+            <li>Supported development of financial analyses and company valuations across key sectors and publicly traded companies.</li>
+            <li>Prepared research reports, financial models, and presentations to support investment recommendations.</li>
+            <li>Monitored quarterly earnings, corporate developments, and macroeconomic trends.</li>
+          </ul>
+        </article>
+
+        <article class="cls-card cls-card--work">
+          <div class="cls-card-header">
+            <div>
+              <h3 class="cls-card-role">Finance Intern</h3>
+              <p class="cls-card-org">Daclaf · Mexico City, Mexico</p>
+            </div>
+            <time class="cls-card-date">Aug 2025 – Feb 2026</time>
+          </div>
+          <ul class="cls-card-bullets">
+            <li>Supported financial operations and internal reporting, contributing to budget tracking and cost-control initiatives.</li>
+            <li>Developed financial analyses to evaluate operational performance and support management decision-making.</li>
+            <li>Coordinated with cross-functional teams to improve process efficiency and data accuracy.</li>
+          </ul>
+        </article>
+
+        <article class="cls-card cls-card--work">
+          <div class="cls-card-header">
+            <div>
+              <h3 class="cls-card-role">Assistant to the CEO</h3>
+              <p class="cls-card-org">Grupo Kessel · Mexico City, Mexico</p>
+            </div>
+            <time class="cls-card-date">Jan 2021 – Aug 2025</time>
+          </div>
+          <ul class="cls-card-bullets">
+            <li>Prepared monthly progress reports and identified investment opportunities for executive decision-making.</li>
+            <li>Assisted in research and planning of new business strategies.</li>
+          </ul>
+        </article>
+
+        <article class="cls-card cls-card--project">
+          <div class="cls-card-header">
+            <div>
+              <h3 class="cls-card-role">Founder</h3>
+              <p class="cls-card-org">Drone Photography MX · Mexico City, Mexico</p>
+            </div>
+            <time class="cls-card-date">Feb 2020 – Dec 2021</time>
+          </div>
+          <ul class="cls-card-bullets">
+            <li>Launched a commercial drone photography company for professional aerial projects.</li>
+            <li>Managed client relations and editing workflows to deliver high-quality results.</li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- Education -->
+      <section class="cls-section" id="classic-education">
+        <h2 class="cls-section-title">Education</h2>
+
+        <article class="cls-card cls-card--education">
+          <div class="cls-card-header">
+            <div>
+              <h3 class="cls-card-role">Dual BSc — Finance &amp; Data Science</h3>
+              <p class="cls-card-org">ITAM · Instituto Tecnológico Autónomo de México · Mexico City</p>
+            </div>
+            <time class="cls-card-date">Expected Jan 2028</time>
+          </div>
+          <ul class="cls-card-bullets">
+            <li>Bloomberg Market Concepts Certified (2024)</li>
+            <li>Teaching Assistant — Fundamentals of Finance (Jan 2025 – Present)</li>
+          </ul>
+        </article>
+
+        <article class="cls-card cls-card--education">
+          <div class="cls-card-header">
+            <div>
+              <h3 class="cls-card-role">High School Diploma — Graduated with Honors</h3>
+              <p class="cls-card-org">Colegio Hebreo Tarbut · Mexico City</p>
+            </div>
+            <time class="cls-card-date">Graduated Jun 2023</time>
+          </div>
+        </article>
+      </section>
+
+      <!-- Projects & Leadership -->
+      <section class="cls-section">
+        <h2 class="cls-section-title">Projects &amp; Leadership</h2>
+
+        <article class="cls-card cls-card--project">
+          <div class="cls-card-header">
+            <div>
+              <h3 class="cls-card-role">Under Secretary General — Model United Nations</h3>
+              <p class="cls-card-org">Colegio Hebreo Tarbut · Mexico City</p>
+            </div>
+            <time class="cls-card-date">Aug 2023 – Jun 2024</time>
+          </div>
+          <ul class="cls-card-bullets">
+            <li>Directed a Model United Nations conference with 300 delegates from 5 schools.</li>
+            <li>Oversaw all committee activities and ensured diplomatic protocol compliance.</li>
+          </ul>
+        </article>
+
+        <article class="cls-card cls-card--project">
+          <div class="cls-card-header">
+            <div>
+              <h3 class="cls-card-role">Project Lead — High School Synagogue Renovation</h3>
+              <p class="cls-card-org">Mexico City</p>
+            </div>
+            <time class="cls-card-date">Aug 2022 – Mar 2023</time>
+          </div>
+          <ul class="cls-card-bullets">
+            <li>Led fundraising campaign and supervised architectural updates to modernize the synagogue space.</li>
+            <li>Increased student engagement through improved facilities and programming.</li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- Volunteering -->
+      <section class="cls-section">
+        <h2 class="cls-section-title">Volunteering</h2>
+
+        <article class="cls-card cls-card--volunteer">
+          <div class="cls-card-header">
+            <div>
+              <h3 class="cls-card-role">Paramedic Volunteer</h3>
+              <p class="cls-card-org">Maguen David Adom · Israel</p>
+            </div>
+            <time class="cls-card-date">Sep – Dec 2023</time>
+          </div>
+          <ul class="cls-card-bullets">
+            <li>Served on emergency ambulances, prepared equipment, and administered first aid in high-pressure environments.</li>
+            <li>Earned First Responder certification (Israel, 2023).</li>
+          </ul>
+        </article>
+
+        <article class="cls-card cls-card--volunteer">
+          <div class="cls-card-header">
+            <div>
+              <h3 class="cls-card-role">Volunteer English Teacher</h3>
+              <p class="cls-card-org">Yad Rajamim · Mexico City</p>
+            </div>
+            <time class="cls-card-date">Jan 2024 – Present</time>
+          </div>
+          <ul class="cls-card-bullets">
+            <li>Teaching English to vulnerable children, equipping them with tools for future academic success.</li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- Skills -->
+      <section class="cls-section" id="classic-contact">
+        <h2 class="cls-section-title">Skills</h2>
+        <div class="cls-skills-grid">
+          <div class="cls-skill-group">
+            <h3>Technical</h3>
+            <div class="cls-pill-row">
+              <span class="cls-pill">Python</span>
+              <span class="cls-pill">Java</span>
+              <span class="cls-pill">SQL</span>
+              <span class="cls-pill">SAP</span>
+              <span class="cls-pill">Financial Modeling</span>
+              <span class="cls-pill">Equity Research</span>
+            </div>
+          </div>
+          <div class="cls-skill-group">
+            <h3>Languages</h3>
+            <div class="cls-lang-list">
+              <div class="cls-lang"><span>Spanish</span><span class="cls-lang-level">Native</span></div>
+              <div class="cls-lang"><span>English</span><span class="cls-lang-level">Fluent</span></div>
+              <div class="cls-lang"><span>Hebrew</span><span class="cls-lang-level">Intermediate</span></div>
+            </div>
+          </div>
+          <div class="cls-skill-group">
+            <h3>Certifications</h3>
+            <div class="cls-pill-row">
+              <span class="cls-pill">Bloomberg Market Concepts</span>
+              <span class="cls-pill">First Responder — Israel</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="cls-section cls-contact-section">
+        <h2 class="cls-section-title">Contact</h2>
+        <div class="cls-contact-links">
+          <a href="mailto:jorgepuszkar@gmail.com" class="cls-contact-link">✉ jorgepuszkar@gmail.com</a>
+          <a href="https://linkedin.com/in/jorge-puszkar-869b341ba/" target="_blank" rel="noopener" class="cls-contact-link">💼 LinkedIn</a>
+        </div>
+      </section>
+
+    </div><!-- .cls-container -->
+  </div><!-- #classic-view -->
+
+  <!-- ══════════════════════════════════════════════
+       GALLERY OVERLAY
+  ══════════════════════════════════════════════ -->
+  <div id="gallery-overlay" aria-hidden="true" role="dialog" aria-label="Drone Photography Gallery">
+    <div class="gallery-header">
+      <h2>Drone Photography</h2>
+      <button class="gallery-close" id="gallery-close" aria-label="Close gallery">✕</button>
+    </div>
+    <div class="gallery-grid" id="gallery-grid"></div>
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <button class="lb-close" id="lb-close" aria-label="Close photo">✕</button>
+      <button class="lb-prev" id="lb-prev" aria-label="Previous photo">‹</button>
+      <button class="lb-next" id="lb-next" aria-label="Next photo">›</button>
+      <div class="lb-img-wrap">
+        <img class="lb-img" id="lb-img" src="" alt="" />
+      </div>
+      <div class="lb-caption">
+        <span class="lb-location" id="lb-location"></span>
+        <span class="lb-date" id="lb-date"></span>
+        <p class="lb-text" id="lb-text"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       VIEW TOGGLE BUTTON (fixed bottom-right)
+  ══════════════════════════════════════════════ -->
+  <button class="view-toggle" id="view-toggle" aria-label="Switch view">
+    <span class="toggle-icon">📋</span>
+    <span class="toggle-label">Classic View</span>
+  </button>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/map.js"></script>
+  <script src="js/toggle.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>
